@@ -16,6 +16,14 @@ use App\Characterref;
 use App\EducationalBack;
 use App\Records;
 use App\Barangay;
+use App\Courses;
+use App\Students;
+use App\Stu1;
+use App\Stu2;
+use App\Stu3;
+use App\Stu4;
+use App\Stu5;
+use App\Stu6;
 use App\ContactPerson;
 use App\Allowances;
 use App\CivilStatus;
@@ -683,8 +691,8 @@ class AdminController extends Controller
     public function getStudentPage()
     {
         $data['title'] = "University of Eastern Pangasinan";
-        // $data['barangays'] = Barangay::all();
-        // $data['civil_status'] = CivilStatus::all();
+        $data['courses'] = Courses::all();
+        $data['civil_status'] = CivilStatus::all();
         $data['base_url'] = App::make("url")->to('/');
         $data['prof_pic'] = UserProfile::where('user_id', Auth::user()->id)->select('user_profile_pic')->pluck('user_profile_pic');
 
@@ -717,7 +725,6 @@ class AdminController extends Controller
                 'lname' => strtoupper($request->lname),
                 'mname' => strtoupper($request->mname),
                 'ename' => strtoupper($request->ename),
-                'gender' => $request->gender,
                 'birthdate' => date('Y-m-d', strtotime($request->birthdate)),
                 'civil_status' => $request->civil_status,
                 'unique_id_num' => $unique_id_num,

@@ -108,48 +108,47 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9">
-                                    <div class="col-md-6">
+                                    
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label>Birthdate <span style="color:red;">*</span></label>
-                                            <div class="input-group date">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-                                                <input type="text" class="form-control pull-right" name="birthdate" id="datepicker">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Civil Status <span style="color:red;">*</span></label>
-                                            <select name="civil_status" id="civil_status" class="form-control select2"  style="width: 100%;">
-                                                <option selected disabled>Select Status</option>
-                                              
+                                            <label>Course <span style="color:red;">*</span></label>
+                                            <select name="course" id="course" class="form-control select2"  style="width: 100%;">
+                                                <option selected disabled>Select Course</option>
+                                                @foreach ($courses as $item)
+                                                    <option value="<?= $item->id ?>"><?= $item->course_code ?></option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-9">
+
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Gender <span style="color:red;">*</span></label>
-                                            <div class="row col-md-offset-1">
-                                                <input type="radio" name="gender" value="Male" class="minimal" checked>
-                                                <i class="fa fa-male"></i> | Male
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="radio" name="gender" value="Female" class="minimal">
-                                                <i class="fa fa-female"></i> | Female
-                                            </div>
+                                            <label>Major <span style="color:red;">*</span></label>
+                                            <select name="major" id="major" class="form-control select2"  style="width: 100%;">
+                                                <option selected disabled>Select Major</option>
+                                                @foreach ($courses as $item)
+                                                    <option value="<?= $item->id ?>"><?= $item->course_code ?></option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Address <span style="color:red;">*</span></label>
-                                        <input type="text" name="address" id="address" style="text-transform: capitalize;" required class="form-control">
+                                    
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Year Level <span style="color:red;">*</span></label>
+                                            <select name="yr_lvl" id="yr_lvl" class="form-control select2"  style="width: 100%;">
+                                                <option selected disabled>Select Year Level</option>
+                                                    <option value="I">1st year</option>
+                                                    <option value="II">2nd year</option>
+                                                    <option value="III">3rd year</option>
+                                                    <option value="IV">4th year</option>
+                                            </select>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
+                           
                             <div class="row">
                                 {{-- <div class="col-md-6">
                                     <div class="form-group">
@@ -160,40 +159,22 @@
                                         </select>
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">Street</label>
-                                        <input type="text" name="street" id="street" class="form-control" style="text-transform: capitalize;">
-                                    </div>
-                                </div>
+                                
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">Phone Number</label>
-                                        <input type="text" name="phone_num" id="phone_num" class="form-control" data-inputmask='"mask": "(0999) 999-9999"' data-mask>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">Telephone Number</label>
-                                        <input type="text" name="tel_num" id="tel_num" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <hr>
-                            <h4><b><i>Contact Person</i></b></h4>
+                            <h4><b><i>Address</i></b></h4>
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="form-group">
-                                        <label for="">First Name <span style="color:red;">*</span></label>
-                                        <input type="text" name="cp_fname" id="cp_fname" required style="text-transform: capitalize;" class="form-control">
+                                        <label for="number">Number <span style="color:red;">*</span></label>
+                                        <input type="text" name="number" id="number" required style="text-transform: capitalize;" placehoder="#00" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="">Middle Name <span style="color:red;">*</span></label>
-                                        <input type="text" name="cp_mname" id="cp_mname" required style="text-transform: capitalize;" class="form-control">
+                                        <label for="street">Street <span style="color:red;">*</span></label>
+                                        <input type="text" name="street" id="street" required style="text-transform: capitalize;" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -205,6 +186,79 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Extension Name <span style="color:red;">*</span></label>
+                                        <input type="text" name="cp_ename" id="cp_ename" style="text-transform: capitalize;" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4><b><i>Guardian</i></b></h4>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="number">Number <span style="color:red;">*</span></label>
+                                        <input type="text" name="number" id="number" required style="text-transform: capitalize;" placehoder="#00" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="street">Street <span style="color:red;">*</span></label>
+                                        <input type="text" name="street" id="street" required style="text-transform: capitalize;" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="">Last Name <span style="color:red;">*</span></label>
+                                        <input type="text" name="cp_lname" id="cp_lname" required style="text-transform: capitalize;" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="">Extension Name <span style="color:red;">*</span></label>
+                                        <input type="text" name="cp_ename" id="cp_ename" style="text-transform: capitalize;" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4><b><i>Personal Information</i></b></h4>
+                            <div class="row">
+                               
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Gender <span style="color:red;">*</span></label>
+                                        <div class="row col-md-offset-1">
+                                            <input type="radio" name="gender" value="Male" class="minimal" checked>
+                                            <i class="fa fa-male"></i> | Male
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" name="gender" value="Female" class="minimal">
+                                            <i class="fa fa-female"></i> | Female
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Birthdate <span style="color:red;">*</span></label>
+                                        <div class="input-group date">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" class="form-control pull-right" name="birthdate" id="datepicker">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Civil Status <span style="color:red;">*</span></label>
+                                        <select name="civil_status" id="civil_status" class="form-control select2"  style="width: 100%;">
+                                            <option selected disabled>Select Status</option>
+                                            @foreach ($civil_status as $item)
+                                                <option value="<?= $item->id ?>"><?= $item->name ?></option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="">Nationality <span style="color:red;">*</span></label>
                                         <input type="text" name="cp_ename" id="cp_ename" style="text-transform: capitalize;" class="form-control">
                                     </div>
                                 </div>

@@ -14,21 +14,23 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('fname');
-            $table->string('lname');
-            $table->string('mname');
+            $table->string('id')->nullable()->default(null);
+            $table->string('studid', 50)->nullable()->default(null);
+            $table->string('docdate')->nullable()->default(null);
+            $table->string('stud_status')->nullable()->default(null);
+            $table->string('lname')->nullable()->default(null);
+            $table->string('fname')->nullable()->default(null);
+            $table->string('mname')->nullable()->default(null);;
             $table->string('ename')->nullable()->default(null);
-            $table->integer('course_id');
-            $table->integer('major_id');
-            $table->integer('sy_id');
-            $table->integer('sem_id');
-            $table->integer('codeN');
-            $table->integer('rateCode');
-            $table->integer('year_lvl');
-            $table->integer('created_by_id');
-            $table->string('studid', 50);
+            $table->string('course_id')->nullable()->default(null);
+            $table->string('major_id')->nullable()->default(null);
             $table->string('profile_pic')->nullable()->default(null);
+            $table->string('sy_id')->nullable()->default(null);
+            $table->string('year_lvl')->nullable()->default(null);
+            $table->integer('codeN')->nullable()->default(null);
+            $table->integer('rateCode')->nullable()->default(null);
+            $table->integer('sem_id')->nullable()->default(null);
+            $table->integer('created_by_id')->nullable()->default(null);
             $table->integer('status')->nullable()->default(1)->comment("1=active;0=inactive");
             $table->timestamps();
         });

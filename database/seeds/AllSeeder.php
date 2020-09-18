@@ -14,7 +14,10 @@ class AllSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             BarangaySeeder::class,
-            CivilStatusSeeder::class
+            CivilStatusSeeder::class,
+            CourseSeeder::class,
+            MajorSeeder::class,
+            StudentSeeder::class
         ]);
     }
 }
