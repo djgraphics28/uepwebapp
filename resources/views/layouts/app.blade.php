@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script> window.Laravel = { csrfToken: '{{ csrf_token() }}'} </script>
 
-    <title>Senior Citizen Record Management System</title>
+    <title>University of Eastern Pangasinan</title>
 
     <link rel="icon" href="{{ asset('public/favicon.ico') }}" type="image/ico" />
     <link rel="stylesheet" href="{{ asset('public/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">

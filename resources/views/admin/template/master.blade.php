@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script> window.Laravel = { csrfToken: '{{ csrf_token() }}'} </script>
 
-    <title>{{$title}} | SCRM</title>
+    <title>{{$title}} | UEP</title>
 
     <link rel="icon" href="{{ asset('public/favicon.ico') }}" type="image/ico" />
     <!-- Tell the browser to be responsive to screen width -->
@@ -102,8 +102,8 @@
     <!-- Logo -->
     <a href="{{ url('/home') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini" style="font-size:14px!important;"><b>SCRM</b></span>
-      <span class="logo-lg"><b>SCRM</b></span>
+      <span class="logo-mini" style="font-size:14px!important;"><b>UEP</b></span>
+      <span class="logo-lg"><b>UEP</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -193,6 +193,27 @@
             <i class="fa fa-archive"></i> <span>Senior Citizen</span>
           </a>
         </li>
+        <li class="treeview {{ strpos(Request::url(), 'admin-student') == true ? 'active' : '' }}">
+          <a href="#">
+            <i class="fa fa-table"></i>
+            <span>Students</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ strpos(Request::url(), 'admin-student') == true ? 'active' : '' }}"><a href="{{ url('/admin-student') }}"><i class="fa fa-user"></i> Manage Students</a></li>
+            <li><a href="#"><i class="fa fa-th"></i> Enroll</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+          </ul>
+        </li>
+        
+        <li class="{{ strpos(Request::url(), 'admin-faculty') == true ? 'active' : '' }}">
+          <a href="{{ url('/admin-faculty') }}">
+            <i class="fa fa-user"></i> <span>Faculty</span>
+          </a>
+        </li>
         <li class="{{ strpos(Request::url(), 'contribution') == true ? 'active' : '' }}">
           <a href="{{ url('/admin-senior-contributions') }}">
             <i class="glyphicon glyphicon-piggy-bank"></i> <span>Senior Citizen Contribution</span>
@@ -228,7 +249,7 @@
             <div class="pull-right hidden-xs">
               <b>Version</b> 1.0.1
             </div>
-            <strong>Copyright &copy; 2019 <a href="#">Senior Citizen Record Management</a>.</strong> All rights
+            <strong>Copyright &copy; 2020 <a href="#">University of Eastern Pangasinan</a>.</strong> All rights
             reserved.
         </footer>
 
